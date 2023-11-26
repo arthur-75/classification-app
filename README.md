@@ -34,20 +34,20 @@ If you would like to run a folder of images you can do the command below and the
 ## Files 
 ```bash
 .
-├── main.py (main file with two argParse "input_folder" and "output_csv"  )
-├── Dockerfile (to run the application without conda)
-├── app.py  (to run the app web)
+├── main.py "(main file with two argParse "input_folder" and "output_csv"  )"
+├── Dockerfile "(to run the application without conda)"
+├── app.py  "(to run the app web)"
 ├── Challenge classification.pdf report with explication 
 ├── images_Analysis.ipynb  
-├── requirements-dev.txt  (requirements for Conda environment)
-├── requirements.txt (requirements for Python code)
-├── static  (styles for the webAPP)
+├── requirements-dev.txt  "(requirements for Conda environment)"
+├── requirements.txt "(requirements for Python code)"
+├── static  "(styles for the webAPP)"
 │   └── styles.css
-├── templates  (HTML for the webAPP)
+├── templates  "(HTML for the webAPP)"
 │   ├── error.html
 │   ├── index.html
 │   └── result.html
-├── training  (in this file we can find the data set, model, weights, and utils functions)
+├── training  "(in this file we can find the data set, model, weights, and utils functions)"
 │   ├── dataset
 │   │   ├── test_images
 │   │   │   ├── ...
@@ -58,12 +58,12 @@ If you would like to run a folder of images you can do the command below and the
 │   │           ├── ...
 │   ├── model.py
 │   ├── utils.py
-│   └── w_models  (model's weights)
-│       ├── best_model.pth (the one that we are using)
+│   └── w_models  "(model's weights)"
+│       ├── best_model.pth "(the one that we are using)"
 │       ├── model-7.pth
 │       └── w_model.pth
-├── training_prediction.ipynb (you make predictiions and training here )
-└── uploads (folder saved automaticlly the image that apears on the web APP )
+├── training_prediction.ipynb "(you make predictiions and training here )"
+└── uploads "(folder saved automaticlly the image that apears on the web APP )"
 ```
 
 ## Data
