@@ -40,7 +40,7 @@ If you would like to run a folder of images you can do the command below and the
 ├── Challenge classification.pdf report with explication 
 ├── images_Analysis.ipynb  
 ├── requirements-dev.txt  "(requirements for Conda environment)"
-├── requirements.txt "(requirements for Python code)"
+├── requirements.txt "(requirements for Python conda)"
 ├── static  "(styles for the webAPP)"
 │   └── styles.css
 ├── templates  "(HTML for the webAPP)"
