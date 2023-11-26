@@ -1,7 +1,7 @@
 # Classification-app
 
 ###### Using Dcoker 
-* Open Docker, open the app if you are using Mac/wido
+* Open Docker, open the app if you are using Mac/Windows
 * run the following command to build the Docker image in your terminale  `docker build -t image-classifier-app .` note you should be inside trimble folder 
 * After building the Docker image, you can run a container from it using the following command: `docker run -p 8080:5001 image-classifier-app`
 * Open your web browser and go to `http://localhost:5000`
