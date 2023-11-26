@@ -107,7 +107,7 @@ class CustomFolder(Dataset):
             # Placeholder label (can be any value since it won't be used during inference)
             return image, -1, counts,image_path
     def predict_one(self,model):
-        """Predict one file"""
+        """Predict one image"""
         image = Image.open(self.image_paths).convert('RGB')
         counts =torch.tensor(self.CountPixels(image))
         counts= torch.tensor(np.expand_dims(counts, axis=0))
@@ -224,7 +224,7 @@ class CustomFolder(Dataset):
         else:
             print("No labels available for distribution calculation.")
     def train_loader(self,dataset,batch_size=8,transform=None):
-        """oader for training, by dividing the data into train, valid and test """
+        """loader for training, by dividing the data into train, valid and test """
         #
         train_size = int(0.6 * len(dataset))
         valid_size = int(0.2 * len(dataset))  
@@ -252,8 +252,8 @@ class CustomFolder(Dataset):
 
 
     def predction_loader(self,predict_dataset ,batch_size=8):
-        #predict_dataset = CustomFolder(root=path, transform=test_transform,has_labels=False)
-        predict_loader= DataLoader(predict_dataset, batch_size=batch_size )
+        """loader for predicion """
+-        predict_loader= DataLoader(predict_dataset, batch_size=batch_size )
         return predict_loader
 
 
@@ -262,6 +262,7 @@ class CustomFolder(Dataset):
   
 
 def met(model,test_loader,show_det=False):
+    """ Metrics and Prediction"""
     criterion = torch.nn.CrossEntropyLoss()
     # Testing loop
     # Set the model to evaluation mode
@@ -284,10 +285,8 @@ def met(model,test_loader,show_det=False):
             # Convert predicted probabilities to class predictions
             _, predictions = torch.max(outputs, 1)
             all_test_predictions.extend(predictions.cpu().numpy())
-            all_test_labels.extend(labels.cpu().numpy())
-            
+            all_test_labels.extend(labels.cpu().numpy()) 
     # Calculate metrics for the test set
-   
     if labels[0] ==-1: return all_test_predictions
     print("Test loss: ",running_loss)
     f1 = f1_score(all_test_labels, all_test_predictions, average='weighted')
@@ -308,9 +307,10 @@ def met(model,test_loader,show_det=False):
         print(f"Test- Accuracy: {accuracy}, F1 Score: {f1}")
         print("--------------------------------------------------------------------------")
     return outputs,f1,running_loss
-#------------------------------------------digantsic-----------------------------------------------------
+#------------------------------------------diagnostic-----------------------------------------------------
 
-def anal(model,test_loader,device=None,):
+def diagnostic(model,test_loader,device=None,):
+    """Diagnostic the results of mislabeling """
     # Lists to store misclassified examples
     misclassified_images = []
     misclassified_predictions = []
@@ -351,7 +351,7 @@ def anal(model,test_loader,device=None,):
 
 
 def plt_loss(train_losses,test_losses,epochs):
-    #to plot losses 
+    """to plot losses """
     plt.plot(range(1, epochs + 1), train_losses, label='Training Loss')
     plt.plot(range(1, epochs + 1), test_losses, label='Test Loss')
     plt.xlabel('Epoch')

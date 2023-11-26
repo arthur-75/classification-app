@@ -9,6 +9,9 @@ from datetime import datetime
 
 
 class Classifier(nn.Module):
+    """
+    The main model to classify
+    """
     def __init__(self, num_classes,pretrained=True):
         super(Classifier, self).__init__()
         # Use a pre-trained  model as an examples
@@ -37,7 +40,7 @@ class Classifier(nn.Module):
         return x
     
 def training(model,train_loader,val_loader,epochs=15):
-
+    """Training a model""" 
     # Check if a GPU is available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -92,6 +95,7 @@ def training(model,train_loader,val_loader,epochs=15):
 
 
 def model():
+    """Use a trained model that I have built"""
     state_dict = torch.load("training/w_models/best_model.pth", map_location=torch.device('cpu'))
     model = Classifier(2)
     model_dict = model.state_dict()
