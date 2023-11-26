@@ -1,13 +1,15 @@
 # Classification-app
 
+## Run
+
 ### Using Dcoker 
 (It would take 10 min)
 * Open Docker, open the app if you are using Mac/Windows
 * run the following command to build the Docker image in your terminale  `docker build -t image-classifier-app .` note you should be inside trimble folder 
 * After building the Docker image, you can run a container from it using the following command: `docker run -p 8080:5001 image-classifier-app`
-* Open your web browser and go to `http://localhost:5000`
+* Open your web browser and go to `Running on http://127.0.0.1:5001`
 
-### 1. Anaconda environment
+### Anaconda environment
 
 To set up the environment, execute in a terminal the followings:
 
@@ -16,14 +18,20 @@ To set up the environment, execute in a terminal the followings:
 * `conda install trimble`
 * `pip install -r requirements-dev.txt`
 
-### 2. Run app
-
+### Run app
 * `python app.py` to run the application web
-* `python main.py` to run python script (optional : add two arguments ) `python main.py --input_folder training/dataset/test_images --output_csv predictions.csv` 
+* then you go to `http://127.0.0.1:5001`
+
+### Run script Main 
+If you would like to run a folder of images you can do the command below and then you would get file .csv with "file","pred","label" : 
+* `python main.py` to run python the script (optional : add two arguments `python main.py --input_folder training/dataset/test_images --output_csv predictions.csv` )
+
+### Or use PYIJB to make predictions and / or training a new model
+* training_prediction.ipynb
 
 
 
-### 3. Files 
+## Files 
 ```bash
 .
 ├── main.py (main file with two argParse "input_folder" and "output_csv"  )
@@ -58,7 +66,7 @@ To set up the environment, execute in a terminal the followings:
 └── uploads (folder saved automaticlly the image that apears on the web APP )
 ```
 
-### 4. Data
+## Data
 
 ``training/dataset/train_images``, a small sample of images. The dataset contains 153 images,  randomly chosen from each class of the train, validation, test split.
 * Train: To train and prepare the model. 
@@ -75,17 +83,17 @@ The images undergo transformation and augmentation using the following steps:
 * While other techniques, such as edge detection and LBP Texture Analysis, were explored, time constraints prevented their integration into the production pipeline.
 
 
-### 5. Model
+## Model
 
 CNN Hybrid Approach:
 Rather than building a CNN model from scratch, we leverage Transfer Learning. Specifically, we harness the GoogleNet architecture along with its pre-trained weights. This approach not only conserves resources but also avoids duplicating the efforts of other accomplished scientists. (Note: Two additional architectures have also been tested.)
 
 
-### 6. Input
+### Input
 Two inputs are considered for the model:
 Segmented and Preprocessed Images: Injected directly into Googlenet.
 Additional Information: Mean and variance information is injected into a dense layer. 
 
 
-### 7. Input 
+###  Result 
 The CNN hybrid model has demonstrated superior performance compared to both the baseline and SVM, particularly regarding the recall and precision metrics for fields. But a potential limitation of the model concerning the detection of roads in scenarios where the road is unclear, and there is a significant presence of green/yellow pixels, the model may encounter challenges in accurately identifying roads. This situation highlights a specific condition under which the model may falter, emphasising the need for further refinement or consideration of alternative strategies, especially in environments with pronounced colour variations.
