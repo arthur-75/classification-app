@@ -1,0 +1,40 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Image Classifier</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/">Classify</a>
+        <!-- Add more menu items as needed -->
+    </nav>
+    <div class="container">
+    <h1>Classification Fields vs Roads</h1>
+    <h2>Classification Result</h2>
+    <p>File: {{ filename }}</p>
+    <p>Predicted Label: {{ predicted_label }}</p>
+    <p>Probability: {{ probability }}</p>
+
+    <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image">
+    <form action="/">
+        <input type="submit" value="Go Back" class="btn-back">
+    </form>
+    </div>
+
+    <footer>
+        <p>Arthur SATOUF</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/arthur-satouf/">LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/arthur-75">GitHub</a></p>
+        <!-- Add more contact information or links as needed -->
+    </footer>
+</body>
+</html>

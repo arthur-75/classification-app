@@ -1,0 +1,36 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Image Classifier</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/">Classify</a>
+        <!-- Add more menu items as needed -->
+    </nav>
+    <div class="container">
+    <h1>Classification Fields vs Roads</h1>
+    <h2>Image Classifier</h2>
+    <form action="/classify" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <input type="submit" value="Classify">
+    </form>
+    </div>
+
+<footer>
+    <p>Arthur SATOUF</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/arthur-satouf/">LinkedIn</a></p>
+    <p>GitHub: <a href="https://github.com/arthur-75">GitHub</a></p>
+    <!-- Add more contact information or links as needed -->
+</footer>
+</body>
+</html>
