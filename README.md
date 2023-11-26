@@ -34,7 +34,7 @@ If you would like to run a folder of images you can do the command below and the
 ## Files 
 ```bash
 .
-├── main.py "(main file with two argParse "input_folder" and "output_csv"  )"
+├── main.py "(main file with two argParse 'input_folder' and 'output_csv'  )"
 ├── Dockerfile "(to run the application without conda)"
 ├── app.py  "(to run the app web)"
 ├── Challenge classification.pdf report with explication 
