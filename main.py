@@ -5,6 +5,7 @@ import pandas as pd
 from training.utils import test_transform, CustomFolder, met
 from training.model import model
 
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Run CAN model on input data and save predictions to a CSV file.')
     parser.add_argument('--input_folder', default='training/dataset/test_images', help='Path to the input data folder.')

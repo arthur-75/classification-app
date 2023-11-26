@@ -1,5 +1,5 @@
 import torch
-from torchvision.transforms import v2 as transforms
+from torchvision.transforms import  transforms
 from PIL import Image
 from torch.utils.data import Dataset, DataLoader,WeightedRandomSampler
 import os
@@ -253,7 +253,7 @@ class CustomFolder(Dataset):
 
     def predction_loader(self,predict_dataset ,batch_size=8):
         """loader for predicion """
--        predict_loader= DataLoader(predict_dataset, batch_size=batch_size )
+        predict_loader= DataLoader(predict_dataset, batch_size=batch_size )
         return predict_loader
 
 
@@ -261,7 +261,7 @@ class CustomFolder(Dataset):
 #------------------------------------------Metrics-----------------------------------------------------
   
 
-def met(model,test_loader,show_det=False):
+def met(model,loader,show_det=False):
     """ Metrics and Prediction"""
     criterion = torch.nn.CrossEntropyLoss()
     # Testing loop
@@ -275,7 +275,7 @@ def met(model,test_loader,show_det=False):
     # Iterate through the test set
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     with torch.no_grad():
-        for inputs, labels, cou,image_path in test_loader:
+        for inputs, labels, cou,image_path in loader:
             inputs, labels ,cou= inputs.to(device), labels.to(device),cou.to(device)  # Move data to GPU
             # Forward pass
             outputs = model(inputs,cou)
@@ -309,7 +309,7 @@ def met(model,test_loader,show_det=False):
     return outputs,f1,running_loss
 #------------------------------------------diagnostic-----------------------------------------------------
 
-def diagnostic(model,test_loader,device=None,):
+def diagnostic(model,loader,device=None,):
     """Diagnostic the results of mislabeling """
     # Lists to store misclassified examples
     misclassified_images = []
@@ -317,7 +317,7 @@ def diagnostic(model,test_loader,device=None,):
     misclassified_labels = []
     # Iterate through the test set
     with torch.no_grad():
-         for inputs, labels, cou ,image_path in test_loader:
+         for inputs, labels, cou ,image_path in loader:
             inputs, labels ,cou= inputs.to(device), labels.to(device),cou.to(device)  # Move data to GPU
             # Forward pass
             outputs = model(inputs,cou)
