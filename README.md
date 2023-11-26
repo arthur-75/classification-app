@@ -23,7 +23,7 @@ To set up the environment, execute in a terminal the followings:
 
 
 ###### 3. Files 
-
+```bash
 .
 ├── main.py (main file with two argParse "input_folder" and "output_csv"  )
 ├── Dockerfile (to run the application without conda)
@@ -55,7 +55,7 @@ To set up the environment, execute in a terminal the followings:
 │       └── w_model.pth
 ├── training_prediction.ipynb (you make predictiions and training here )
 └── uploads (folder saved automaticlly the image that apears on the web APP )
-
+```
 
 ###### 4. Data
 
