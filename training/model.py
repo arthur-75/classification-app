@@ -91,3 +91,16 @@ def training(model,train_loader,val_loader,epochs=15):
 
 
 
+def model():
+    state_dict = torch.load("training/w_models/best_model.pth", map_location=torch.device('cpu'))
+    model = Classifier(2)
+    model_dict = model.state_dict()
+    # Map the weights from the pre-trained model to your model
+    pretrained_dict = {k: v for k, v in zip(model_dict.keys(),state_dict.values())}
+    model_dict.update(pretrained_dict)
+    # Load the updated state dictionary into your model
+    model.load_state_dict(model_dict, strict=False)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    model.to(device)
+    ev=model.eval()
+    return model

@@ -5,23 +5,13 @@ from PIL import Image
 import os
 import torch
 from torchvision import transforms
-from training.model import Classifier
+from training.model import model
 from training.utils import test_transform,CustomFolder
 
 app = Flask(__name__, template_folder='templates')
 app.config['UPLOAD_FOLDER'] = 'uploads'
 
-state_dict = torch.load("training/w_models/best_model.pth", map_location=torch.device('cpu'))
-model = Classifier(2)
-model_dict = model.state_dict()
-# Map the weights from the pre-trained model to your model
-pretrained_dict = {k: v for k, v in zip(model_dict.keys(),state_dict.values())}
-model_dict.update(pretrained_dict)
-# Load the updated state dictionary into your model
-model.load_state_dict(model_dict, strict=False)
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-model.to(device)
-ev=model.eval()
+model=model()
 
 @app.route('/')
 def index():
