@@ -1,5 +1,5 @@
 # Classification-app
-![alt text](https://github.com/arthur-75/classification-app/blob/main/training/webapp.png?raw=true)
+<img src="https://github.com/arthur-75/classification-app/blob/main/static/image_ex.png" width="100" height="100">
 ## Run  
 
 ### Using Dcoker 
