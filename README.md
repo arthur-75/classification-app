@@ -2,6 +2,7 @@
 <img src="https://github.com/arthur-75/classification-app/blob/main/static/webapp.png" width="600" height="400">
 ## Run  
 In your terminal  :
+
 * `git clone https://github.com/arthur-75/classification-app.git`
 * `cd classification-app`
 
