@@ -87,7 +87,7 @@ The images undergo transformation and augmentation using the following steps:
 
 CNN Hybrid Approach:
 Rather than building a CNN model from scratch, we leverage Transfer Learning. Specifically, we harness the GoogleNet architecture along with its pre-trained weights. This approach not only conserves resources but also avoids duplicating the efforts of other accomplished scientists. (Note: Two additional architectures have also been tested.)
-<img src="https://github.com/arthur-75/classification-app/blob/main/static/model_ex.png" width="600" height="400">
+<img src="https://github.com/arthur-75/classification-app/blob/main/static/model_ex.png" width="600" height="300">
 
 
 ### Input
