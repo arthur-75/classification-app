@@ -1,6 +1,6 @@
 # Classification-app
-
-## Run
+![alt text](https://github.com/arthur-75/classification-app/blob/main/training/webapp.png?raw=true)
+## Run  
 
 ### Using Dcoker 
 (It would take 10 min)
