@@ -22,7 +22,7 @@ To set up the environment, execute in a terminal the followings:
 
 * `conda create -n trimble`
 * `conda activate trimble`
-* `conda install trimble`
+* `conda install pip`
 * `pip install -r requirements-dev.txt`
 
 ### Run app
