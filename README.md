@@ -1,5 +1,6 @@
 # Classification-app
-<img src="https://github.com/arthur-75/classification-app/blob/main/static/image_ex.png" width="100" height="100">
+<img src="https://github.com/arthur-75/classification-app/blob/main/static/wepapp" width="600" height="400">
+
 ## Run  
 
 ### Using Dcoker 
@@ -87,12 +88,14 @@ The images undergo transformation and augmentation using the following steps:
 
 CNN Hybrid Approach:
 Rather than building a CNN model from scratch, we leverage Transfer Learning. Specifically, we harness the GoogleNet architecture along with its pre-trained weights. This approach not only conserves resources but also avoids duplicating the efforts of other accomplished scientists. (Note: Two additional architectures have also been tested.)
+<img src="https://github.com/arthur-75/classification-app/blob/main/static/model_ex.png" width="600" height="200">
 
 
 ### Input
 Two inputs are considered for the model:
 Segmented and Preprocessed Images: Injected directly into Googlenet.
 Additional Information: Mean and variance information is injected into a dense layer. 
+<img src="https://github.com/arthur-75/classification-app/blob/main/static/image_ex.png" width="600" height="200">
 
 
 ###  Result 
