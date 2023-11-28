@@ -33,7 +33,7 @@ To set up the environment, execute in a terminal the followings:
 If you would like to run a folder of images you can do the command below and then you would get file .csv with "file","pred","label" : 
 * `python main.py` to run python the script (optional : add two arguments `python main.py --input_folder training/dataset/test_images --output_csv predictions.csv` )
 
-### Or use PYIJB to make predictions and / or training a new model
+### Or use IPYNB to make predictions and / or training a new model
 * training_prediction.ipynb
 
 
