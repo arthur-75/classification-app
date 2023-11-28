@@ -99,8 +99,10 @@ Rather than building a CNN model from scratch, we leverage Transfer Learning. Sp
 
 ### Input
 Two inputs are considered for the model:
-Segmented and Preprocessed Images: Injected directly into Googlenet.
-Additional Information: Mean and variance information is injected into a dense layer. 
+
+* Segmented and Preprocessed Images: Injected directly into Googlenet.
+* Additional Information: Mean and variance information is injected into a dense layer.
+  
 <img src="https://github.com/arthur-75/classification-app/blob/main/static/image_ex.png" width="600" height="200">
 
 
