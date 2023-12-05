@@ -1,4 +1,6 @@
-# Classification-app
+# Classification-app CNN Hybrid using Pytorch
+
+Tthis repository has been built for a job interview)
 
 <img src="https://github.com/arthur-75/classification-app/blob/main/static/webapp.png" width="600" height="400">
 
