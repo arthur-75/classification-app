@@ -1,4 +1,4 @@
-# Classification-app CNN Hybrid using Pytorch
+# DL application using CNN Hybrid, Pytorch, Flask, and Docker
 
 (This repository has been built for a job interview)
 
