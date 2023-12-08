@@ -1,4 +1,4 @@
-# DL application using CNN Hybrid, Pytorch, Flask, and Docker
+# DL Web Application using CNN Hybrid, Pytorch, Flask, and Docker
 
 (This repository has been built for a job interview)
 
